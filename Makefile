@@ -2,12 +2,13 @@ SUFFIXES += .d
 CXX = g++
 
 CFLAGS = -Werror -Wall -Wextra -Wfatal-errors -pedantic-errors -pedantic -march=native -O3 -I. -std=c++14
-
+LDFLAGS= -L/d/Nuovacartella/mingw64/lib -lfftw3 
 CFLAGS += $(shell pkg-config --cflags sndfile)
 LFLAGS =  $(shell pkg-config --libs sndfile)
 
 CFLAGS += $(shell pkg-config --cflags fftw3)
 LFLAGS += $(shell pkg-config --libs fftw3)
+LDFLAGS = -static
 
 TARGETS = compute_sound_offset
 
