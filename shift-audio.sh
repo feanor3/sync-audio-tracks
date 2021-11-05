@@ -30,7 +30,7 @@ remove_beginning ()
 }
 
 if (( $(echo "${OFFSET} < 0" | bc -l) )) ; then
-    remove_beginning "${INPUT}" "${OUTPUT}" "${OFFSET}"
+    insert_silence "${INPUT}" "${OUTPUT}" "${OFFSET}"
 else
     insert_silence "${INPUT}" "${OUTPUT}" "${OFFSET}"
 fi
